@@ -11,14 +11,16 @@ body, button {
 
 .blocks{
     flex: 0 0 auto;
+    border: 1px solid gray;
+    box-sizing: border-box;
 }
 
 .container{
     flex-basis: 100%;
     flex-wrap: wrap;
     border: 1px black solid;
-    width: 512px;
-    height: 512px;
+    width: 1024px;
+    height: 1024px;
 }
 
 .square {
@@ -32,4 +34,5 @@ body, button {
 button {
     padding: 4px 8px;
     margin: 8px;
+    font-size: 16px;
 }

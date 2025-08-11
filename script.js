@@ -20,7 +20,7 @@ function colorGrid(div){
 }
 
 function createGrid(x){
-    const containerSize = 512; 
+    const containerSize = 1024; 
     const blockSize = containerSize / x;
     for (let i = 0; i < x * x; i++){
         const newDiv = document.createElement("div");
@@ -52,4 +52,4 @@ function promptGrid(){
     createGrid(size);
 }
 
-createGrid(32);
+createGrid(16);
