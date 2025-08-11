@@ -1,0 +1,35 @@
+body, button {
+    margin: 0;
+    padding: 0;
+}
+
+.flex{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.blocks{
+    flex: 0 0 auto;
+}
+
+.container{
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    border: 1px black solid;
+    width: 512px;
+    height: 512px;
+}
+
+.square {
+    flex-direction: column;
+}
+
+.blackBgColor{
+    background-color: black;
+}
+
+.gridBtn{
+    padding: 4px 8px;
+    margin: 8px;
+}
