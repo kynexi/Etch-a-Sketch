@@ -3,6 +3,10 @@ body, button {
     padding: 0;
 }
 
+.gap{
+    gap: 16px;
+}
+
 .flex{
     justify-content: center;
     align-items: center;
@@ -27,12 +31,7 @@ body, button {
     flex-direction: column;
 }
 
-.blackBgColor{
-    background-color: black;
-}
-
 button {
     padding: 4px 8px;
-    margin: 8px;
     font-size: 16px;
 }

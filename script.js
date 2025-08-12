@@ -1,10 +1,18 @@
 const container = document.querySelector(".container");
-const newGridBtn = document.querySelector(".gridBtn");
+const gridValue = document.querySelector(".gridValue");
+const gridInput = document.querySelector("#gridInp");
 const rainbowToggle = document.querySelector(".rainbow");
 const resetBtn = document.querySelector(".reset");
 
 let rainbow = 0;
 let gridSize = 16;
+
+gridValue.innerHTML = gridInput.value;
+gridInput.addEventListener("input", (event) => {
+    gridValue.innerHTML = event.target.value;
+    gridSize = gridValue.innerHTML;
+    resetGrid(gridSize);
+});
 
 rainbowToggle.addEventListener("click", () => {
     if (rainbow == 0){ rainbow = 1}
@@ -21,12 +29,11 @@ function randomColor(){
 }
 
 function colorGrid(div){
-    if(rainbow == 0 ){
-        div.classList.add('blackBgColor');
-        return;
+    if(!rainbow){ div.style.backgroundColor = `black`;}
+    else{
+        div.style.backgroundColor = `rgb(${randomColor()}, 
+        ${randomColor()}, ${randomColor()})`;
     }
-    div.style.backgroundColor = `rgb(${randomColor()}, 
-    ${randomColor()}, ${randomColor()})`;
 }
 
 function createGrid(x){
@@ -54,15 +61,6 @@ function resetGrid(){
         child = container.lastElementChild;
     }
     createGrid(gridSize);
-}
-
-function promptGrid(){
-    gridSize = prompt("Pick the size of the new grid: ");
-    if(gridSize > 100 || gridSize < 0){
-        promptGrid();
-        return;
-    }
-    resetGrid();
 }
 
 createGrid(gridSize);
